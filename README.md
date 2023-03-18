@@ -100,10 +100,6 @@ pip install -r requirements.txt
 For execution, the backend needs the following environment:
 
 ```
-SET FLASK_DEBUG=development
-```
-
-```
 SET FLASK_APP=app.py
 ```
 
