@@ -1,5 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+from dotenv import load_dotenv
+import os 
 import requests
 
 app = Flask(__name__)
@@ -10,7 +12,7 @@ def search():
     
     query = request.args.get('query')
     language=request.args.get('language')
-    apiKey="Your apiKey"
+    apiKey=os.getenv("api_key")
     url = 'https://newsapi.org/v2/everything?q=' + query + '&language=' + language +'&apiKey=' + apiKey
     response = requests.get(url)
     response= jsonify(response.json())
